@@ -10,7 +10,6 @@ td{
 }
 table{
     border-collapse: collapse;
-    
     left: 50%;
     position: absolute;
     margin-left: -155px;
