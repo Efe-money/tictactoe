@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    background-color: black;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.first {
+    width: 100%;
+    text-align: center;
+}
+
+.first img {
+    max-width: 100%;
+    height: auto;
+}
