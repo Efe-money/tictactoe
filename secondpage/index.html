@@ -28,18 +28,9 @@
 
         .carousel-indicators {
             position: absolute;
-            bottom: -40px;
-            left: 35%;
+            bottom: -35px;
+            left: 50%;
             transform: translateX(-50%);
-            
-        }
-
-        .carousel-indicators li {
-            width: 10px;
-            height: 10px;
-            border-radius: 100%;
-            background-color: white;
-            margin: 0 5px;
         }
 
         .carousel-inner {
@@ -52,8 +43,22 @@
         }
 
         .images {
-            width: 100%;
+            width: 50%;
             margin: 0 auto;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 50%;
+            margin: 20px 0;
+        }
+
+        .navigation a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
         }
     </style>
 </head>
@@ -76,16 +81,27 @@
                 <div class="carousel-item">
                     <div class="images">
                         <img src="../images/cup.png" alt="">
-                        <h3 class="text-white">Scoreboard</h3>
+                        <h3>Scoreboard</h3>
                         <h5>Earn points and make your own way to the top of the scoreboard!</h5>
                     </div>
                 </div>
             </div>
+
             <ol class="carousel-indicators">
                 <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
                 <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
                 <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
             </ol>
+
+            <div class="navigation">
+                <a href="previous-page.html">Back</a>
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+                </ol>
+                <a href="next-page.html">Next</a>
+            </div>
         </div>
     </main>
 
