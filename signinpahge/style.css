@@ -44,10 +44,6 @@ html {
     display: none;
   }
   
-  #error-msg-second-line {
-    /* display: block; */
-  }
-  
   #login-form {
     align-self: flex-start;
     display: grid;
