@@ -64,11 +64,17 @@
             border-radius: 5px;
             background-color: rgba(255, 255, 255, 0.3);
             margin: 0 10px;
+            pointer-events: none;
+            cursor: default;
         }
 
         .navigation a:hover {
             background-color: rgba(255, 255, 255, 0.5);
         }
+        a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
     </style>
 </head>
 <body>
@@ -90,7 +96,7 @@
                 <div class="carousel-item">
                     <div class="images">
                         <img src="../images/cup.png" alt="">
-                        <h3>Scoreboard</h3>
+                        <h3 class="text-white p-3">Scoreboard</h3>
                         <h5>Earn points and make your own way to the top of the scoreboard!</h5>
                     </div>
                 </div>
@@ -104,7 +110,7 @@
         </div>
 
         <div class="navigation">
-            <a href="../secondpage/index.html">Back</a>
+            <a href="../secondpage/index.html"  disabled="disabled">Back</a>
             <a href="../signinpahge/index.html">Next</a>
         </div>
 
