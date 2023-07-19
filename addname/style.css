@@ -46,9 +46,12 @@ main {
   
   #heading {
     text-align: center;
-    margin: 2em;
+    margin: 1em;
     color: rgb(255, 255, 255);
-    font-size: 1.2em;
+    font-size: 2em;
+    font-family:cursive;
+    font-weight: 500;
+    font: bolder;
   }
   
   .field {
@@ -77,6 +80,7 @@ main {
     outline: none;
     width: 100%;
     color: #d3d3d3;
+    height: 40px;
   }
   
   .form .btn {
@@ -87,10 +91,10 @@ main {
   }
   
   .button1 {
-    padding: 0.5em;
+    padding: 1em;
     padding-left: 1.1em;
     padding-right: 1.1em;
-    border-radius: 5px;
+    border-radius: 20px;
     margin-right: 0.5em;
     border: none;
     outline: none;
@@ -105,10 +109,10 @@ main {
   }
   
   .button2 {
-    padding: 0.5em;
+    padding: 1em;
     padding-left: 2.3em;
     padding-right: 2.3em;
-    border-radius: 5px;
+    border-radius: 20px;
     border: none;
     outline: none;
     transition: .4s ease-in-out;
