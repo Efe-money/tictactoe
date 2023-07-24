@@ -18,14 +18,15 @@ main {
 
 .carousel-indicators {
     position: absolute;
-    bottom: -310px;
-    left: 35%;
+    top: 90%;
+    
     transform: translateX(-50%);
+    /* z-index: 1; */
 }
 
 .carousel-inner {
     text-align: center;
-    top: 40%;
+    top: 15%;
 }
 
 .carousel-inner h5 {
@@ -43,7 +44,7 @@ main {
     justify-content: center;
     align-items: center;
     margin-top: 260px;
-    gap: 90%;
+    gap: 50%;
 }
 
 .navigation a {

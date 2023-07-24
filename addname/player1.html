@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,32 +7,29 @@
     <title>Document</title>
 </head>
 <body>
-
-
     <main>
         <div class="first">
-           
-    <form class="form">
-        <p id="heading">Oneplayer</p>
-        <div class="field">
-       
-          <input autocomplete="off" placeholder="Name" class="input-field" type="text">
-        </div>
-        <div class="field">
-      
-          <input placeholder="Opponent" class="input-field" type="text">
-        </div>
-        <div class="btn">
-        <button class="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Back&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-        <button class="button2">Start game</button>
-        </div>
-       
-    </form>
+            <form class="form">
+                <p id="heading">Oneplayer</p>
+                <div class="field">
+                    <input autocomplete="off" placeholder="Name" class="input-field" type="text">
+                </div>
+                <div class="field">
+                    <input placeholder="Opponent" class="input-field" type="text">
+                </div>
+                <div class="btn">
+                    <button class="button1" onclick="backW()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Back&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                    <button class="button2">Start game</button>
+                </div>
+            </form>
         </div>
     </main>
-   
 
-
-   
+    <script src="./style.js"></script>
+    <script>
+        function backW() {
+            window.location.href = "../signinpahge/index.html";
+        }
+    </script>
 </body>
 </html>
