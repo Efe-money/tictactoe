@@ -21,14 +21,18 @@ main {
     text-align: center;
 }
 
- 
+ table{
+    gap: 10px;
+ }
 
 td {
-    border: 2px solid white;
+    border: 3px solid grey;
+    /* border-radius: 50px ; */
     height: 100px;
     width: 100px;
     text-align: center;
     vertical-align: middle;
+    
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     cursor: pointer;
     font-size: 70px;
@@ -41,7 +45,7 @@ td {
     gap: 20px;
 }
 .nameScore p{
-    border: 3px solid white;
+    border: 3px solid grey;
     width: 120px;
     height: 30px;
     color: white;
