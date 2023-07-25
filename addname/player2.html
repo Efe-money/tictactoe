@@ -10,23 +10,29 @@
     <main>
         <div class="first">
            
-    <form class="form">
-        <p id="heading">Two players </p>
-        <div class="field">
-       
-          <input autocomplete="off" placeholder="Name" class="input-field" type="text">
-        </div>
-        <div class="field">
-      
-          <input placeholder="Opponent" class="input-field" type="text">
-        </div>
-        <div class="btn">
-        <button class="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Back&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-        <button class="button2">Start game</button>
-        </div>
+            <form class="form">
+                 <p id="heading">Two players </p>
+                <div class="field">
+                    <input autocomplete="off" placeholder="Name" class="input-field" type="text">
+                </div>
+
+                <div class="field">
+                    <input placeholder="Opponent" class="input-field" type="text">
+                </div>
+
+                <div class="btn">
+                    <button class="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Back&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                    <button class="button2" onclick="startgame()">Start game</button>
+                </div>
+         </div>
        
     </form>
-        </div>
     </main>
 </body>
 </html>
+<script>
+     function startgame(e) {
+        e.preventDefault();         
+         window.location.href = "../oneplayer/index.html";
+     }
+</script>
