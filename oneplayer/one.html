@@ -39,8 +39,8 @@
         </div>
 
         <div class="nameScore d-flex ">
-            <p id="showing">fjfnfjrf</p>
-            <p id="show">kncienm</p>
+            <p id="showing"></p>
+            <p id="show"></p>
         </div>
     </main>
 
@@ -48,3 +48,18 @@
 
 </body>
 </html>
+<script>
+      function displayNames() {
+            const player = localStorage.getItem("playerName");
+            const opponent = localStorage.getItem("opponentName");
+
+            // Display the names in the empty divs
+            document.getElementById("showing").innerText = "Player: " + player;
+            document.getElementById("show").innerText = "Opponent: " + opponent;
+        }
+
+        // Call the function to display the names when the page loads
+        displayNames();
+    </script>
+</body>
+</script>
