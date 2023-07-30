@@ -12,7 +12,11 @@ const qinCombo = [
 	[2, 4, 6]
 ]
 const cells = document.querySelectorAll('.cell');
+startGame();
 
+function startGame(){
+	
+}
 
 
   function displayNames() {
