@@ -37,15 +37,26 @@ td {
     cursor: pointer;
     font-size: 70px;
 }
+th{
+    border: 2px solid white;
+    height: 20px;
+    width: 150px;
+    color: white;
+    /* padding-left: 10px; */
+    padding: 10px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight:bold;
+}
 
 .nameScore {
-    /* border: 2px solid white; */
+    border: 2px solid white;
     width: 200px;
     margin-top: 20px;
     gap: 20px;
 }
 .nameScore p{
-    border: 3px solid grey;
+    /* border: 3px solid grey; */
     width: 120px;
     height: 30px;
     color: white;

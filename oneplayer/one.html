@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
+    <title>Tic Tac Toe</title>
 
     <style>
      
@@ -15,7 +15,7 @@
 <body>
     <main>
         
-            <table>
+            <table id="board">
 
                 <tr>
                     <td class="cell" id="0"></td>
@@ -33,19 +33,58 @@
                     <td class="cell" id="6"></td>
                     <td class="cell" id="7"></td>
                     <td class="cell" id="8"></td>
-                </tr>
-                
+                </tr>  
             </table>
-        </div>
 
-        <div class="nameScore d-flex ">
-            <p id="showing"></p>
-            <p id="show"></p>
+
+             <!-- Modal -->
+    <div class="modal fade" id="nameModal" tabindex="-1" role="dialog" aria-labelledby="nameModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="nameModalLabel">Edit Names</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="playerName">Player Name</label>
+                        <input type="text" class="form-control" id="playerName" placeholder="Enter player name">
+                    </div>
+                    <div class="form-group">
+                        <label for="opponentName">Opponent Name</label>
+                        <input type="text" class="form-control" id="opponentName"
+                            placeholder="Enter opponent name">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="saveNames()">Save</button>
+            </div>
         </div>
+    </div>
+</div>
+
+
+
+
+
+
+        
+            <table> 
+                <tr>
+                    <th  id="showing"></th>
+                    <th id="show"></th>
+                </tr>
+            </table>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-
+    <script src="./style.js"></script>
 </body>
 </html>
 <script>

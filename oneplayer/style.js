@@ -1,6 +1,7 @@
-const PLAYER_X_CLASS = 'x'
-const PLAYER_O_CLASS = 'circle'
-const WINNING_COMBINATIONS = [
+const boardElem= document.getElementById('board')
+const huPlayer = 'O'
+const aiPlayer = 'X'
+const qinCombo = [
 	[0, 1, 2],
 	[3, 4, 5],
 	[6, 7, 8],
@@ -10,3 +11,18 @@ const WINNING_COMBINATIONS = [
 	[0, 4, 8],
 	[2, 4, 6]
 ]
+const cells = document.querySelectorAll('.cell');
+
+
+
+  function displayNames() {
+            const player = localStorage.getItem("playerName");
+            const opponent = localStorage.getItem("opponentName");
+
+            // Display the names in the empty divs
+            document.getElementById("showing").innerText = "Player: " + player;
+            document.getElementById("show").innerText = "Opponent: " + opponent;
+        }
+
+        // Call the function to display the names when the page loads
+        displayNames();
