@@ -1,32 +1,103 @@
-const boardElem= document.getElementById('board')
-const huPlayer = 'O'
-const aiPlayer = 'X'
-const qinCombo = [
-	[0, 1, 2],
-	[3, 4, 5],
-	[6, 7, 8],
-	[0, 3, 6],
-	[1, 4, 7],
-	[2, 5, 8],
-	[0, 4, 8],
-	[2, 4, 6]
-]
+const boardElem = document.getElementById('board');
+const huPlayer = 'O';
+const aiPlayer = 'X';
+const winCombo = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+];
 const cells = document.querySelectorAll('.cell');
+
+let board = ['', '', '', '', '', '', '', '', ''];
+let currentPlayer = huPlayer;
+
 startGame();
 
-function startGame(){
-	
+function startGame() {
+    // Add click event listener to each cell to handle player moves
+    cells.forEach((cell, index) => {
+        cell.addEventListener('click', () => {
+            if (board[index] === '' && currentPlayer === huPlayer) {
+                // Player's move
+                makeMove(index, currentPlayer);
+                currentPlayer = aiPlayer;
+                setTimeout(makeAiMove, 500); // Add a delay for AI move for better visualization
+            }
+        });
+    });
 }
 
+function makeMove(index, player) {
+    board[index] = player;
+    cells[index].innerText = player;
+	cells[index].classList.add(player === 'X' ? 'symbol-x' : 'symbol-o');
+    checkWin();
+    checkDraw();
+}
 
-  function displayNames() {
-            const player = localStorage.getItem("playerName");
-            const opponent = localStorage.getItem("opponentName");
+function makeAiMove() {
+    // AI's move - Let's implement a simple AI that selects the first available empty cell
+    const emptyCells = board.reduce((acc, cell, index) => {
+        if (cell === '') acc.push(index);
+        return acc;
+    }, []);
 
-            // Display the names in the empty divs
-            document.getElementById("showing").innerText = "Player: " + player;
-            document.getElementById("show").innerText = "Opponent: " + opponent;
+    const aiMove = emptyCells[0]; // Select the first empty cell (you can implement a more advanced AI here)
+    makeMove(aiMove, aiPlayer);
+    currentPlayer = huPlayer;
+}
+
+function checkWin() {
+    for (const combo of winCombo) {
+        const [a, b, c] = combo;
+        if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+            // We have a winner
+            highlightWinCombo(combo);
+            setTimeout(() => {
+                alert(`${board[a]} wins!`);
+                resetGame();
+            }, 200);
+            return true;
         }
+    }
+    return false;
+}
 
-        // Call the function to display the names when the page loads
-        displayNames();
+function checkDraw() {
+    if (!board.includes('')) {
+        // Draw
+        setTimeout(() => {
+            alert("It's a draw!");
+            resetGame();
+        }, 200);
+        return true;
+    }
+    return false;
+}
+
+function highlightWinCombo(combo) {
+    combo.forEach((index) => {
+        cells[index].classList.add('win');
+    });
+}
+
+function resetGame() {
+    board = ['', '', '', '', '', '', '', '', ''];
+    cells.forEach((cell) => {
+        cell.innerText = '';
+        cell.classList.remove('win');
+        cell.classList.remove('symbol-x');
+        cell.classList.remove('symbol-o');
+    });
+    currentPlayer = huPlayer;
+}
+
+function replayBtn() {
+    resetGame();
+    startGame();
+}

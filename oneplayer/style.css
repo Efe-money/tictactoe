@@ -228,4 +228,20 @@ button {
   }
   
   
+
+
+  /* Define the styles for the X and O symbols */
+.symbol-x {
+    color: red;
+}
+
+.symbol-o {
+    color: blue;
+}
+
+/* Add the 'win' class styles for highlighting the winning combination */
+.win {
+    background-color: yellow;
+}
+
   
