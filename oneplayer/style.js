@@ -1,3 +1,6 @@
+
+
+
 const boardElem = document.getElementById('board');
 const huPlayer = 'O';
 const aiPlayer = 'X';
@@ -16,6 +19,16 @@ const cells = document.querySelectorAll('.cell');
 let board = ['', '', '', '', '', '', '', '', ''];
 let currentPlayer = huPlayer;
 
+
+
+
+const playerName = localStorage.getItem('playerName') || 'Player';
+const opponentName = localStorage.getItem('opponentName') || 'Opponent';
+
+// Update the player names on the HTML
+document.getElementById('playerName').value = playerName;
+document.getElementById('opponentName').value = opponentName;
+
 startGame();
 
 function startGame() {
@@ -30,6 +43,7 @@ function startGame() {
             }
         });
     });
+	// window.location.reload(s)
 }
 
 function makeMove(index, player) {
