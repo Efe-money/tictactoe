@@ -1,6 +1,4 @@
 
-
-
 const boardElem = document.getElementById('board');
 const huPlayer = 'O';
 const aiPlayer = 'X';
@@ -22,12 +20,16 @@ let currentPlayer = huPlayer;
 
 
 
+// Retrieve player names from local storage
 const playerName = localStorage.getItem('playerName') || 'Player';
 const opponentName = localStorage.getItem('opponentName') || 'Opponent';
 
 // Update the player names on the HTML
-document.getElementById('playerName').value = playerName;
-document.getElementById('opponentName').value = opponentName;
+document.getElementById('showing').textContent = playerName;
+document.getElementById('show').textContent = opponentName;
+
+
+
 
 startGame();
 
@@ -43,13 +45,13 @@ function startGame() {
             }
         });
     });
-	// window.location.reload(s)
+    // window.location.reload(s)
 }
 
 function makeMove(index, player) {
     board[index] = player;
     cells[index].innerText = player;
-	cells[index].classList.add(player === 'X' ? 'symbol-x' : 'symbol-o');
+    cells[index].classList.add(player === 'X' ? 'symbol-x' : 'symbol-o');
     checkWin();
     checkDraw();
 }
