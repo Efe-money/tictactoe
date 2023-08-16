@@ -67,10 +67,8 @@
          </div>
 
 
-<section>
-    
-</section>
-         <table style="height: 50px; width: 0px;">
+
+         <table class="score-table">
             <tr>
                 <th>Player</th>
                 <th>Score</th>
@@ -92,8 +90,8 @@
 </html>
 <script>
         
-          
-    const boardElem = document.getElementById('board');
+        
+        const boardElem = document.getElementById('board');
     const huPlayer = 'O';
     const aiPlayer = 'X';
     const winCombo = [
@@ -191,16 +189,12 @@
                 } else if (board[a] === aiPlayer) {
                     increaseOpponentScore();
                 }
-                setTimeout(() => {
-                    alert(`${board[a]} wins!`);
-                    resetGame();
-                }, 200);
+                resetGame();
                 return true;
             }
         }
         return false;
     }
-    
    
 
     function checkDraw() {
@@ -236,7 +230,6 @@
         resetGame();
         startGame();
     }
-    
     
     
 </script>

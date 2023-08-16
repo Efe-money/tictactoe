@@ -86,23 +86,32 @@
     
    
 
+   
     function checkWin() {
         for (const combo of winCombo) {
             const [a, b, c] = combo;
             if (board[a] && board[a] === board[b] && board[a] === board[c]) {
                 // We have a winner
-                highlightWinCombo(combo);
-                if (board[a] === huPlayer) {
-                    increasePlayerScore();
-                } else if (board[a] === aiPlayer) {
-                    increaseOpponentScore();
-                }
-                resetGame();
+                setTimeout(() => {
+                    highlightWinCombo(combo);
+                    if (board[a] === huPlayer) {
+                        increasePlayerScore();
+                    } else if (board[a] === aiPlayer) {
+                        increaseOpponentScore();
+                    }
+                    resetGame();
+                }, 200);
                 return true;
             }
         }
         return false;
     }
+    
+    
+    
+    
+    
+    
    
 
     function checkDraw() {

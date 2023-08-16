@@ -245,8 +245,26 @@ button {
 }
 
 
-
-.scoreBoard{
-  
+.score-table {
+  width: 300px; /* Adjust the width as needed */
+  height: 5px; /* Adjust the height as needed */
+  border-collapse: collapse;
+  margin-top: 20px; /* Add some space from the main content */
 }
-  
+
+.score-table th, .score-table td {
+  padding: 8px;
+  border: 1px solid #ccc;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+
+.score-table th {
+  background-color: black;
+}
+
+.score-table td {
+  font-weight: bold;
+}
+
