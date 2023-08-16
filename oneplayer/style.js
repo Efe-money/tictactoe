@@ -16,6 +16,8 @@
     
     let board = ['', '', '', '', '', '', '', '', ''];
     let currentPlayer = huPlayer;
+    let playerScore = 0;
+    let opponentScore = 0;
     
     // Retrieve player names from local storage
     const playerName = localStorage.getItem('playerName') || 'Player';
@@ -26,6 +28,26 @@
     document.getElementById('show').textContent = opponentName;
     
     startGame();
+    updateScoreDisplay();
+
+
+    function updateScoreDisplay() {
+        document.getElementById('playerNameDisplay').textContent = playerName;
+        document.getElementById('opponentNameDisplay').textContent = opponentName;
+        document.getElementById('playerScoreDisplay').textContent = playerScore;
+        document.getElementById('opponentScoreDisplay').textContent = opponentScore;
+    }
+
+
+    function increasePlayerScore() {
+        playerScore++;
+        updateScoreDisplay();
+    }
+
+    function increaseOpponentScore() {
+        opponentScore++;
+        updateScoreDisplay();
+    }
     
     function startGame() {
         // Add click event listener to each cell to handle player moves
@@ -62,22 +84,27 @@
         currentPlayer = huPlayer;
     }
     
+   
+
     function checkWin() {
         for (const combo of winCombo) {
             const [a, b, c] = combo;
             if (board[a] && board[a] === board[b] && board[a] === board[c]) {
                 // We have a winner
                 highlightWinCombo(combo);
-                setTimeout(() => {
-                    alert(`${board[a]} wins!`);
-                    resetGame();
-                }, 200);
+                if (board[a] === huPlayer) {
+                    increasePlayerScore();
+                } else if (board[a] === aiPlayer) {
+                    increaseOpponentScore();
+                }
+                resetGame();
                 return true;
             }
         }
         return false;
     }
-    
+   
+
     function checkDraw() {
         if (!board.includes('')) {
             // Draw
