@@ -247,7 +247,7 @@ button {
 
 .score-table {
   width: 300px; /* Adjust the width as needed */
-  height: 5px; /* Adjust the height as needed */
+  height: 51px; /* Adjust the height as needed */
   border-collapse: collapse;
   margin-top: 20px; /* Add some space from the main content */
 }
