@@ -118,7 +118,7 @@
         if (!board.includes('')) {
             // Draw
             setTimeout(() => {
-                alert("It's a draw!");
+                // alert("It's a draw!"7 h7);
                 resetGame();
             }, 200);
             return true;
