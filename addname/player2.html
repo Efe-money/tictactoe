@@ -32,18 +32,16 @@
 </body>
 </html>
 <script>
-     function startgame() {
-            // Get the values entered in the input fields
-            const playerName = document.getElementById("playerName").value;
-            const opponentName = document.getElementById("opponentName").value;
+    function startgame() {
+        // Get the values entered in the input fields
+        const playerName = document.getElementById("playerName").value;
+        const opponentName = document.getElementById("opponentName").value;
             
-            // Store the values in local storage
-            localStorage.setItem("playerName", playerName);
-            localStorage.setItem("opponentName", opponentName);
+        // Store the values in local storage
+        localStorage.setItem("playerName", playerName);
+        localStorage.setItem("opponentName", opponentName);
             
-            // Redirect to the next page
-            window.location.href = "../two players/iindex.html";
-    
-            
-        }
+        // Redirect to the next page
+        window.location.href = "../two players/index.html";
+    }
 </script>
